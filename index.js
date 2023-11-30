@@ -1,11 +1,13 @@
 const fs = require('fs');
+require('dotenv').config()
+
 const { RekognitionClient, DetectLabelsCommand } = require("@aws-sdk/client-rekognition");
 
 const client = new RekognitionClient({
     region: "us-east-2",
     credentials: {
-        accessKeyId: 'AKIA562ORD6FEZKSTU6E',
-        secretAccessKey: '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',
+        accessKeyId: process.env.accessKeyId,
+        secretAccessKey: process.env.secretAccessKey,
     }
 });
 
